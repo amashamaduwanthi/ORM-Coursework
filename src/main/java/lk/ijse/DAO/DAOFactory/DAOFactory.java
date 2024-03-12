@@ -2,6 +2,7 @@ package lk.ijse.DAO.DAOFactory;
 
 
 import lk.ijse.DAO.DAOFactory.custom.DAOImpl.BookDAOImpl;
+import lk.ijse.DAO.DAOFactory.custom.DAOImpl.LibraryDAOImpl;
 import lk.ijse.DAO.SuperDAO;
 
 public class DAOFactory {
@@ -19,6 +20,8 @@ public class DAOFactory {
         switch (daoType) {
             case BOOK:
                 return  new BookDAOImpl();
+            case LIBRARY:
+                return (SuperDAO) new LibraryDAOImpl();
 
             default:
                 return null;

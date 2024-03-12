@@ -1,6 +1,7 @@
 package lk.ijse.BoFactory;
 
 import lk.ijse.BO.Custom.impl.BookBOImpl;
+import lk.ijse.BO.Custom.impl.LibraryBOImpl;
 import lk.ijse.DAO.SuperDAO;
 
 public class BOFactory {
@@ -31,8 +32,8 @@ public class BOFactory {
 //                return  new UserBOImpl();
 //            case PERSON:
 //                return new PersonBOImpl();
-//            case LIBRARY:
-//                return new LibraryBOImpl();
+          case LIBRARY:
+              return new LibraryBOImpl();
          default:
            return null;
         }
