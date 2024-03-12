@@ -7,9 +7,9 @@
 
 <AnchorPane prefHeight="793.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.DashBoardController">
    <children>
-      <Button layoutX="53.0" layoutY="94.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="127.0" text="Books" />
-      <Button layoutX="249.0" layoutY="94.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="127.0" text="Persons" />
-      <Button layoutX="472.0" layoutY="94.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="127.0" text="Branchers" />
+      <Button layoutX="53.0" layoutY="94.0" mnemonicParsing="false" onAction="#btnBookOnAction" prefHeight="47.0" prefWidth="127.0" text="Books" />
+      <Button layoutX="249.0" layoutY="94.0" mnemonicParsing="false" onAction="#btnPersonOnAtion" prefHeight="47.0" prefWidth="127.0" text="Persons" />
+      <Button layoutX="472.0" layoutY="94.0" mnemonicParsing="false" onAction="#btnBranchersOnAction" prefHeight="47.0" prefWidth="127.0" text="Branchers" />
       <Label layoutX="50.0" layoutY="27.0" prefHeight="16.0" prefWidth="188.0" text="Dashboard" textFill="#c31717">
          <font>
             <Font name="System Bold" size="30.0" />
