@@ -6,7 +6,7 @@ import lk.ijse.Entity.Person;
 
 public interface PersonDAO extends CrudDAO<Person> {
 
-
+    boolean checkPassword(String username, String password);
     String generateUserID();
 
 }
