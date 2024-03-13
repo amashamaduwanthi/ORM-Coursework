@@ -3,33 +3,40 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="loginPanel" prefHeight="649.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.LoginFormController">
+<AnchorPane fx:id="loginPanel" prefHeight="740.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.LoginFormController">
    <children>
       <Label layoutX="128.0" layoutY="64.0" prefHeight="41.0" prefWidth="242.0" text="Login Form">
          <font>
             <Font name="System Bold" size="34.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUser" layoutX="67.0" layoutY="184.0" prefHeight="56.0" prefWidth="309.0" promptText="UserName">
+      <TextField fx:id="txtUser" layoutX="569.0" layoutY="188.0" prefHeight="56.0" prefWidth="309.0" promptText="UserName">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtEmail" layoutX="67.0" layoutY="269.0" prefHeight="56.0" prefWidth="309.0" promptText="Email">
+      <TextField fx:id="txtEmail" layoutX="569.0" layoutY="273.0" prefHeight="56.0" prefWidth="309.0" promptText="Email">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtPassword" layoutX="68.0" layoutY="348.0" prefHeight="56.0" prefWidth="309.0" promptText="Pssword">
+      <TextField fx:id="txtPassword" layoutX="570.0" layoutY="352.0" prefHeight="56.0" prefWidth="309.0" promptText="Pssword">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </TextField>
-      <Button layoutX="102.0" layoutY="465.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="41.0" prefWidth="94.0" text="Login" />
-      <Label layoutX="67.0" layoutY="536.0" prefHeight="16.0" prefWidth="152.0" text="Havent't an account    " textFill="#4c2da8" />
-      <Button layoutX="223.0" layoutY="532.0" mnemonicParsing="false" onAction="#btnSinInOnAction" text="signin" />
+      <Button layoutX="605.0" layoutY="458.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="41.0" prefWidth="94.0" text="Login" />
+      <Label layoutX="570.0" layoutY="529.0" prefHeight="16.0" prefWidth="152.0" text="Havent't an account    " textFill="#4c2da8" />
+      <Button layoutX="726.0" layoutY="525.0" mnemonicParsing="false" onAction="#btnSinInOnAction" text="signin" />
+      <ImageView fitHeight="430.0" fitWidth="463.0" layoutX="37.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assests/library-single-page.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
