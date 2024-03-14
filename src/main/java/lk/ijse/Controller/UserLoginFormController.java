@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -17,11 +18,12 @@ public class UserLoginFormController {
     public TextField txtUser;
     public TextField txtEmail;
     public TextField txtPassword;
+    public PasswordField pwPassword;
     PersonBO personBO = (PersonBO) BOFactory.getBOFactory().getBO(BOFactory.BOType.PERSON);
 
     public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
         String username = txtUser.getText();
-        String password = txtPassword.getText();
+        String password = pwPassword.getText();
         boolean login = personBO.checkPassword(username, password);
         if(username.isEmpty() || password.isEmpty()) {
             new Alert(Alert.AlertType.ERROR, "Empty").show();
@@ -46,5 +48,12 @@ public class UserLoginFormController {
         Stage stage = (Stage) loginPanel.getScene().getWindow();
         stage.setScene(scene);
 
+    }
+
+    public void btnFrogotPassword(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/View/Change-passwordForm.fxml"));
+        Scene scene = new Scene(anchorPane);
+        Stage stage = (Stage) loginPanel.getScene().getWindow();
+        stage.setScene(scene);
     }
 }

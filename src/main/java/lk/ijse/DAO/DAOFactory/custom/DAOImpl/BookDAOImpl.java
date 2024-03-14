@@ -8,6 +8,8 @@ import lk.ijse.config.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 public class BookDAOImpl implements BookDAO {
 
     @Override
@@ -52,5 +54,10 @@ public class BookDAOImpl implements BookDAO {
         session.close();
 
         return book;
+    }
+
+    @Override
+    public List<Book> getAll() {
+        return null;
     }
 }

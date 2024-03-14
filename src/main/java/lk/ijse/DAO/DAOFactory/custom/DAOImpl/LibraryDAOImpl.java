@@ -7,6 +7,8 @@ import lk.ijse.config.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 public class LibraryDAOImpl implements LibraryDAO {
     @Override
     public boolean Save(Library library) {
@@ -48,5 +50,10 @@ public class LibraryDAOImpl implements LibraryDAO {
         session.close();
 
         return library;
+    }
+
+    @Override
+    public List<Library> getAll() {
+        return null;
     }
 }

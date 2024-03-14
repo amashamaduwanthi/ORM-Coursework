@@ -2,6 +2,8 @@ package lk.ijse.DAO.DAOFactory;
 
 import lk.ijse.DAO.SuperDAO;
 
+import java.util.List;
+
 public interface CrudDAO<T> extends SuperDAO {
     boolean Save(T type);
     boolean update(T type);
@@ -9,5 +11,6 @@ public interface CrudDAO<T> extends SuperDAO {
     boolean delete(String id);
 
     T search(String id);
+    List<T> getAll();
 
 }

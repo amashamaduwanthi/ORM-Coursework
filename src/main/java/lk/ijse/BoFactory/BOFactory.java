@@ -3,6 +3,7 @@ package lk.ijse.BoFactory;
 import lk.ijse.BO.Custom.impl.BookBOImpl;
 import lk.ijse.BO.Custom.impl.LibraryBOImpl;
 import lk.ijse.BO.Custom.impl.PersonBOImpl;
+import lk.ijse.BO.Custom.impl.SettingFormBOImpl;
 import lk.ijse.DAO.SuperDAO;
 
 public class BOFactory {
@@ -21,7 +22,7 @@ public class BOFactory {
     }
 
     public enum BOType {
-        BOOK,USER,PERSON,LIBRARY;
+        BOOK,USER,PERSON,LIBRARY,SETTING;
 
     }
 
@@ -35,6 +36,8 @@ public class BOFactory {
             return new PersonBOImpl();
           case LIBRARY:
               return new LibraryBOImpl();
+            case SETTING:
+                  return (SuperDAO) new SettingFormBOImpl();
          default:
            return null;
         }

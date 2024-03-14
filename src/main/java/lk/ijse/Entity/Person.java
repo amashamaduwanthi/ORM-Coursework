@@ -37,6 +37,9 @@ public class Person {
         this.password = newPw;
     }
 
+    public Person(String password) {
+    }
+
     @Override
     public String toString() {
         return userName + nic + email + address + tel + password + userID;

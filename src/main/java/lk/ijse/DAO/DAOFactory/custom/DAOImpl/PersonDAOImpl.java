@@ -8,6 +8,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
 
+import java.util.List;
+
 public class PersonDAOImpl implements Book.PersonDAO {
     @Override
     public boolean Save(Person person) {
@@ -44,6 +46,14 @@ public class PersonDAOImpl implements Book.PersonDAO {
         session.close();
         return person;
     }
+
+    @Override
+    public List<Person> getAll() {
+
+            Session session = FactoryConfiguration.getInstance().getSession();
+            return session.createQuery("FROM Person ").list();
+        }
+
 
 
     @Override

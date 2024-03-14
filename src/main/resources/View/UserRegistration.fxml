@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -13,14 +15,19 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUserName" layoutX="77.0" layoutY="188.0" prefHeight="51.0" prefWidth="508.0" promptText="User Name" />
-      <TextField fx:id="txtNIC" layoutX="77.0" layoutY="264.0" prefHeight="51.0" prefWidth="508.0" promptText="NIC NO" />
-      <TextField fx:id="txtAddress" layoutX="77.0" layoutY="464.0" prefHeight="51.0" prefWidth="508.0" promptText="Address" />
-      <TextField fx:id="txtPassword" layoutX="77.0" layoutY="554.0" prefHeight="51.0" prefWidth="508.0" promptText="Password" />
-      <Button layoutX="146.0" layoutY="641.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="42.0" prefWidth="98.0" text="Register" />
-      <Button layoutX="331.0" layoutY="638.0" mnemonicParsing="false" onAction="#btnSignInAction" prefHeight="42.0" prefWidth="98.0" text="SignIn" />
+      <TextField fx:id="txtUserName" layoutX="77.0" layoutY="188.0" prefHeight="51.0" prefWidth="227.0" promptText="User Name" />
+      <TextField fx:id="txtNIC" layoutX="77.0" layoutY="264.0" prefHeight="51.0" prefWidth="227.0" promptText="NIC NO" />
+      <TextField fx:id="txtAddress" layoutX="77.0" layoutY="464.0" prefHeight="51.0" prefWidth="227.0" promptText="Address" />
+      <TextField fx:id="txtPassword" layoutX="77.0" layoutY="554.0" prefHeight="51.0" prefWidth="227.0" promptText="Password" />
+      <Button layoutX="146.0" layoutY="641.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="42.0" prefWidth="98.0" style="-fx-background-color: #8CB9BD;" text="Register" />
+      <Button layoutX="331.0" layoutY="644.0" mnemonicParsing="false" onAction="#btnSignInAction" prefHeight="42.0" prefWidth="98.0" style="-fx-background-color: #8CB9BD;" text="SignIn" />
       <Label fx:id="lblId" layoutX="573.0" layoutY="69.0" prefHeight="16.0" prefWidth="130.0" />
-      <TextField fx:id="txtTel" layoutX="77.0" layoutY="329.0" prefHeight="51.0" prefWidth="508.0" promptText="Tel No" />
-      <TextField fx:id="txtEmail" layoutX="78.0" layoutY="391.0" prefHeight="51.0" prefWidth="508.0" promptText="Email" />
+      <TextField fx:id="txtTel" layoutX="77.0" layoutY="329.0" prefHeight="51.0" prefWidth="227.0" promptText="Tel No" />
+      <TextField fx:id="txtEmail" layoutX="78.0" layoutY="391.0" prefHeight="51.0" prefWidth="227.0" promptText="Email" />
+      <ImageView fitHeight="229.0" fitWidth="260.0" layoutX="389.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assests/download.jpeg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
