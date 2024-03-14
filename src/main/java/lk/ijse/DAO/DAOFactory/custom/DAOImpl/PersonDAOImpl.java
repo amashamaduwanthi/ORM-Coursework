@@ -1,14 +1,14 @@
 package lk.ijse.DAO.DAOFactory.custom.DAOImpl;
 
 
-import lk.ijse.DAO.DAOFactory.custom.PersonDAO;
+import lk.ijse.Entity.Book;
 import lk.ijse.Entity.Person;
 import lk.ijse.config.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
 
-public class PersonDAOImpl implements PersonDAO {
+public class PersonDAOImpl implements Book.PersonDAO {
     @Override
     public boolean Save(Person person) {
         Session session = FactoryConfiguration.getInstance().getSession();

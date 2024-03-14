@@ -20,16 +20,21 @@ public class UserRegistrationForm {
     public TextField txtRePassword;
     public Label lblId;
     public AnchorPane UserRegPanel;
+    public TextField txtNIC;
+    public TextField txtAddress;
+    public TextField txtTel;
     PersonBO personBO = (PersonBO) BOFactory.getBOFactory().getBO(BOFactory.BOType.PERSON);
 
     public void btnRegisterOnAction(ActionEvent actionEvent) {
         String name = txtUserName.getText();
+        String nic = txtNIC.getText();
         String email = txtEmail.getText();
+        String address = txtAddress.getText();
+        String tel = txtTel.getText();
         String password = txtPassword.getText();
-        String re = txtRePassword.getText();
         String id = lblId.getText();
 
-        Person person = new Person(name, email, re,password,id);
+        Person person = new Person(name, nic, email, address, tel, password,id);
         personBO.savePerson(person);
     }
 

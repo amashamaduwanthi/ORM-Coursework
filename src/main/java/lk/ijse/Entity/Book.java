@@ -2,6 +2,8 @@ package lk.ijse.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lk.ijse.DAO.DAOFactory.CrudDAO;
+
 @Entity
 public class Book {
     @Id
@@ -73,5 +75,12 @@ public class Book {
     @Override
     public String toString() {
         return ISBN+title+author+genre+status;
+    }
+
+    public static interface PersonDAO extends CrudDAO<Person> {
+
+        boolean checkPassword(String username, String password);
+        String generateUserID();
+
     }
 }

@@ -14,11 +14,13 @@
          </font>
       </Label>
       <TextField fx:id="txtUserName" layoutX="77.0" layoutY="188.0" prefHeight="51.0" prefWidth="508.0" promptText="User Name" />
-      <TextField fx:id="txtEmail" layoutX="77.0" layoutY="264.0" prefHeight="51.0" prefWidth="508.0" promptText="Email" />
-      <TextField fx:id="txtPassword" layoutX="77.0" layoutY="360.0" prefHeight="51.0" prefWidth="508.0" promptText="Password" />
-      <TextField fx:id="txtRePassword" layoutX="77.0" layoutY="446.0" prefHeight="51.0" prefWidth="508.0" promptText="Re-enter Password " />
-      <Button layoutX="149.0" layoutY="545.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="42.0" prefWidth="98.0" text="Register" />
-      <Button layoutX="339.0" layoutY="545.0" mnemonicParsing="false" onAction="#btnSignInAction" prefHeight="42.0" prefWidth="98.0" text="SignIn" />
+      <TextField fx:id="txtNIC" layoutX="77.0" layoutY="264.0" prefHeight="51.0" prefWidth="508.0" promptText="NIC NO" />
+      <TextField fx:id="txtAddress" layoutX="77.0" layoutY="464.0" prefHeight="51.0" prefWidth="508.0" promptText="Address" />
+      <TextField fx:id="txtPassword" layoutX="77.0" layoutY="554.0" prefHeight="51.0" prefWidth="508.0" promptText="Password" />
+      <Button layoutX="146.0" layoutY="641.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="42.0" prefWidth="98.0" text="Register" />
+      <Button layoutX="331.0" layoutY="638.0" mnemonicParsing="false" onAction="#btnSignInAction" prefHeight="42.0" prefWidth="98.0" text="SignIn" />
       <Label fx:id="lblId" layoutX="573.0" layoutY="69.0" prefHeight="16.0" prefWidth="130.0" />
+      <TextField fx:id="txtTel" layoutX="77.0" layoutY="329.0" prefHeight="51.0" prefWidth="508.0" promptText="Tel No" />
+      <TextField fx:id="txtEmail" layoutX="78.0" layoutY="391.0" prefHeight="51.0" prefWidth="508.0" promptText="Email" />
    </children>
 </AnchorPane>

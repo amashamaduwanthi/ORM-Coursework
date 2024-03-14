@@ -29,7 +29,7 @@ public class UserLoginFormController {
         }
         if (login) {
 
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/Book-borrow-Form.fxml"));
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/View/Book-borrow-Form.fxml"));
             Scene scene = new Scene(anchorPane);
             Stage stage = (Stage) loginPanel.getScene().getWindow();
             stage.setScene(scene);
