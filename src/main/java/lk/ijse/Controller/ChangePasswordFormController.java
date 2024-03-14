@@ -2,63 +2,59 @@ package lk.ijse.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import lk.ijse.BO.Custom.PersonBO;
 import lk.ijse.BO.Custom.SettingFormBO;
 import lk.ijse.BoFactory.BOFactory;
 import lk.ijse.DAO.RegisterDto;
+import lk.ijse.Dto.AdminDTO;
+import lk.ijse.Dto.RegisterDTO;
+import lk.ijse.Dto.UserDTO;
+import lk.ijse.Entity.Person;
 
 import java.util.List;
 
 public class ChangePasswordFormController {
-    public TextField txtNewUserName;
-    public TextField currentUserName;
-    public TextField txtConfirmUserName;
-    public TextField txtCurrentPassword;
-    public TextField txtNewPassword;
-    public TextField txtConfirmPassword;
-    SettingFormBO settingFormBO = (SettingFormBO) BOFactory.getBOFactory().getBO(BOFactory.BOType.SETTING);
+
+    public Label txtName;
+    public Label txtEmail;
+    public Label txtTel;
+    public Label TxtAddress;
+    public TextField txtPassword;
+    public TextField txtSearchId;
+    public Label txtUserId;
+    PersonBO personBO = (PersonBO) BOFactory.getBOFactory().getBO(BOFactory.BOType.PERSON);
+
     public void btnSaveOnAction(ActionEvent actionEvent) {
-        String currentUsername = currentUserName.getText();
-        String newUsername = txtNewUserName.getText();
-        String confirmUsername = txtConfirmUserName.getText();
+        String id =txtSearchId.getText();
+        String name = txtName.getText();
+        String tel = txtTel.getText();
+        String email =txtTel.getText();
+        String address = TxtAddress.getText();
+        String newPw = txtPassword.getText();
+        String userId = txtUserId.getText();
 
-        String currentPassword = txtCurrentPassword.getText();
-        String newPassword = txtNewPassword.getText();
-        String confirmPassword = txtConfirmPassword.getText();
+        Person person = new Person(id, name, email, address, tel, newPw, userId);
+        personBO.changePassword(person);
+    }
 
-        if (!currentUsername.isEmpty() && !newUsername.isEmpty() && !confirmUsername.isEmpty()){
 
-            boolean isChecked = checkingUsername(confirmUsername,newUsername,confirmUsername);
-            if (isChecked){
-                var userDTO = new RegisterDto();
-                userDTO.setUserName(confirmUsername);
-                boolean isUpdated = settingFormBO.updateCredential(userDTO);
 
-                if (isUpdated){
-                    new Alert(Alert.AlertType.INFORMATION,"Updated Successfully").show();
-                }
-            }
-        }else if (!currentPassword.isEmpty() && !newPassword.isEmpty() && !confirmPassword.isEmpty()){
+    public void btnSearchOnAction(ActionEvent actionEvent) {
+        String searchId =txtSearchId.getText();
+        Person person=personBO.searchPerson(searchId);
+        if(person!=null){
+            txtUserId.setText(person.getUserID());
+            txtName.setText(person.getUserName());
+            txtTel.setText(person.getTel());
+            txtEmail.setText(person.getEmail());
+            TxtAddress.setText(person.getAddress());
 
+        }else{
+            new Alert(Alert.AlertType.ERROR,"Not found!!!").show();
         }
-    }
-
-    private boolean checkingUsername(String currentUsername , String newUsername , String confirmUsername) {
-        boolean isChecked = false;
-        List<RegisterDto> registerUsers = settingFormBO.getAllUser();
-
-        for (int i = 0; i < registerUsers.size(); i++){
-            if (currentUsername.equals(registerUsers.get(i).getUserName())){
-                if (newUsername.equals(confirmUsername)){
-                    isChecked = true;
-                }else {
-                   new Alert(Alert.AlertType.ERROR).show();
-                }
-            }
-        }
-        return isChecked;
-    }
 
 
     }
-
+    }

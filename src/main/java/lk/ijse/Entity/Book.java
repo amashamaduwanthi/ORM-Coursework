@@ -77,10 +77,5 @@ public class Book {
         return ISBN+title+author+genre+status;
     }
 
-    public static interface PersonDAO extends CrudDAO<Person> {
 
-        boolean checkPassword(String username, String password);
-        String generateUserID();
-
-    }
 }

@@ -1,13 +1,13 @@
-package lk.ijse.Entity;
+package lk.ijse.Dto;
 
 import lombok.*;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
-public class User {
+public class UserDTO {
     private long id;
     private String name;
     private String email;

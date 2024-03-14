@@ -12,9 +12,11 @@ public interface PersonBO extends SuperDAO {
 
     Person searchPerson(String searchId);
 
-     boolean changePassword(Person person);
+
 
 
 
     boolean checkPassword(String username, String password);
+
+    boolean changePassword(Person person);
 }
