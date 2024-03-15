@@ -6,8 +6,8 @@ import jakarta.persistence.Id;
 public class Library {
     @jakarta.persistence.Id
     private String Id;
-    private String Name;
     private String Address;
+    private String Name;
     private String Tel;
 
 

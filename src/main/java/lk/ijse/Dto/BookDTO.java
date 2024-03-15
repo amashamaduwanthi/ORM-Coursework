@@ -1,36 +1,19 @@
-package lk.ijse.Entity;
+package lk.ijse.Dto;
 
-import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
+import lombok.*;
 
-import java.util.List;
 
-@Entity(name = "books")
-public class Book {
-    @Id
-    @GeneratedValue(generator = "Book-Id-Generator")
-    @GenericGenerator(name = "Book-Id-Generator", strategy = "lk.ijse.util.BookIdGenerator")
+public class BookDTO {
     private String bId;
     private String title;
     private String author;
     private String genre;
     private String status;
-    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List <BorrowedBooks> borrowedBooks;
 
-    public Book() {
+    public BookDTO() {
     }
 
-    public Book(String bId, String title, String author, String genre, String status, List<BorrowedBooks> borrowedBooks) {
-        this.bId = bId;
-        this.title = title;
-        this.author = author;
-        this.genre = genre;
-        this.status = status;
-        this.borrowedBooks = borrowedBooks;
-    }
-
-    public Book(String bId, String title, String author, String genre, String status) {
+    public BookDTO(String bId, String title, String author, String genre, String status) {
         this.bId = bId;
         this.title = title;
         this.author = author;
@@ -38,8 +21,21 @@ public class Book {
         this.status = status;
     }
 
-    public Book(String status) {
+    public BookDTO(String title, String author, String genre, String status) {
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
         this.status = status;
+    }
+
+    public BookDTO(String author, String genre, String status) {
+        this.author = author;
+        this.genre = genre;
+        this.status = status;
+    }
+
+    public BookDTO(String bId) {
+        this.bId = bId;
     }
 
     public String getbId() {
@@ -82,23 +78,15 @@ public class Book {
         this.status = status;
     }
 
-    public List<BorrowedBooks> getBorrowedBooks() {
-        return borrowedBooks;
-    }
-
-    public void setBorrowedBooks(List<BorrowedBooks> borrowedBooks) {
-        this.borrowedBooks = borrowedBooks;
-    }
-
     @Override
     public String toString() {
-        return "Book{" +
+        return "BookDTO{" +
                 "bId='" + bId + '\'' +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", genre='" + genre + '\'' +
                 ", status='" + status + '\'' +
-                ", borrowedBooks=" + borrowedBooks +
                 '}';
     }
+
 }

@@ -7,18 +7,11 @@ import lk.ijse.config.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class LibraryDAOImpl implements LibraryDAO {
-    @Override
-    public boolean Save(Library library) {
-        Session session = FactoryConfiguration.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
-        session.save(library);
-        transaction.commit();
-        session.close();
-        return false;
-    }
+
 
     @Override
     public boolean update(Library library) {
@@ -42,6 +35,11 @@ public class LibraryDAOImpl implements LibraryDAO {
     }
 
     @Override
+    public String getCount() {
+        return null;
+    }
+
+    @Override
     public Library search(String id) {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
@@ -53,7 +51,28 @@ public class LibraryDAOImpl implements LibraryDAO {
     }
 
     @Override
+    public boolean save(Library entity) throws SQLException {
+        return false;
+    }
+
+    @Override
     public List<Library> getAll() {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        List<Library> list = session.createNativeQuery("SELECT * FROM Library", Library.class).list();
+        transaction.commit();
+        session.close();
+        return list;
+
+    }
+
+    @Override
+    public Library exists(String title) {
         return null;
+    }
+
+    @Override
+    public boolean Save(Library librarys) {
+        return false;
     }
 }

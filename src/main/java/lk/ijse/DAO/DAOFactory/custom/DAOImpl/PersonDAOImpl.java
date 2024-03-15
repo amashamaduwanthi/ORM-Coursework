@@ -10,19 +10,11 @@ import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class PersonDAOImpl implements PersonDAO {
-    @Override
-    public boolean Save(Person person) {
-        Session session = FactoryConfiguration.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
 
-        session.save(person);
-        transaction.commit();
-        session.close();
-        return false;
-    }
 
     @Override
     public boolean update(Person person) {
@@ -41,6 +33,11 @@ public class PersonDAOImpl implements PersonDAO {
     }
 
     @Override
+    public String getCount() {
+        return null;
+    }
+
+    @Override
     public Person search(String id) {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
@@ -51,12 +48,21 @@ public class PersonDAOImpl implements PersonDAO {
     }
 
     @Override
+    public boolean save(Person entity) throws SQLException {
+        return false;
+    }
+
+    @Override
     public List<Person> getAll() {
 
             Session session = FactoryConfiguration.getInstance().getSession();
             return session.createQuery("FROM Person ").list();
         }
 
+    @Override
+    public Person exists(String title) {
+        return null;
+    }
 
 
     @Override
