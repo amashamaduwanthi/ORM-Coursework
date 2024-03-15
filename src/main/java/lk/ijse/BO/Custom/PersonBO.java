@@ -1,7 +1,10 @@
 package lk.ijse.BO.Custom;
 
 import lk.ijse.DAO.SuperDAO;
+import lk.ijse.Dto.AdminDTO;
 import lk.ijse.Entity.Person;
+
+import java.util.List;
 
 public interface PersonBO extends SuperDAO {
     boolean savePerson(Person person);
@@ -19,4 +22,6 @@ public interface PersonBO extends SuperDAO {
     boolean checkPassword(String username, String password);
 
     boolean changePassword(Person person);
+
+    List<AdminDTO> getAllAdmin();
 }

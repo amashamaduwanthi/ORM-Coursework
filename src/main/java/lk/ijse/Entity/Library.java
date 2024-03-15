@@ -1,57 +1,81 @@
 package lk.ijse.Entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-@Entity
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity(name = "branches")
 public class Library {
-    @jakarta.persistence.Id
-    private String Id;
-    private String Address;
-    private String Name;
-    private String Tel;
+    @Id
+    @GeneratedValue(generator = "Branch-Id-Generator")
+    @GenericGenerator(name = "Branch-Id-Generator", strategy = "lk.ijse.util.BranchIdGenerator")
+    private String bId;
+    private String address;
+    private String bNumber;
+    private String status;
+    private String adminId;
 
-
-    public Library(){
-
-    }
-    public Library(String Id,String Name, String Address, String Tel) {
-        this.Id=Id;
-        this.Name = Name;
-        this.Address = Address;
-        this.Tel = Tel;
+    public Library() {
     }
 
-    public Library(String id) {
-        this.Id=id;
+    public Library(String bId, String address, String bNumber, String status, String adminId) {
+        this.bId = bId;
+        this.address = address;
+        this.bNumber = bNumber;
+        this.status = status;
+        this.adminId = adminId;
     }
 
-    public String getId() {
-        return Id;
+    public String getbId() {
+        return bId;
     }
 
-    public void setId(String Id) {
-        this.Id = Id;
+    public void setbId(String bId) {
+        this.bId = bId;
     }
-    public String getName() {
-        return Name;
-    }
-    public void setName(String Name) {
-        this.Name = Name;
-    }
+
     public String getAddress() {
-        return Address;
+        return address;
     }
-    public void setAddress(String Address) {
-        this.Address = Address;
+
+    public void setAddress(String address) {
+        this.address = address;
     }
-    public String getTel() {
-        return Tel;
+
+    public String getbNumber() {
+        return bNumber;
     }
-    public void setTel(String Tel) {
-        this.Tel = Tel;
+
+    public void setbNumber(String bNumber) {
+        this.bNumber = bNumber;
     }
-    public String toString(){
-        return Id+Name+Address+Tel;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(String adminId) {
+        this.adminId = adminId;
+    }
+
+    @Override
+    public String toString() {
+        return "Library{" +
+                "bId='" + bId + '\'' +
+                ", address='" + address + '\'' +
+                ", bNumber='" + bNumber + '\'' +
+                ", status='" + status + '\'' +
+                ", adminId='" + adminId + '\'' +
+                '}';
     }
 
 }

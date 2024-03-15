@@ -4,11 +4,14 @@ import lk.ijse.BO.Custom.PersonBO;
 
 import lk.ijse.DAO.DAOFactory.DAOFactory;
 import lk.ijse.DAO.DAOFactory.custom.PersonDAO;
+import lk.ijse.Dto.AdminDTO;
 import lk.ijse.Entity.Book;
 import lk.ijse.Entity.Person;
 
+import java.util.List;
+
 public class PersonBOImpl implements PersonBO {
-    PersonDAO personDAO= (PersonDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.PERSON);
+    PersonDAO personDAO = (PersonDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.PERSON);
 
     @Override
     public boolean savePerson(Person person) {
@@ -33,5 +36,10 @@ public class PersonBOImpl implements PersonBO {
     @Override
     public boolean changePassword(Person person) {
         return false;
+    }
+
+    @Override
+    public List<AdminDTO> getAllAdmin() {
+        return null;
     }
 }
