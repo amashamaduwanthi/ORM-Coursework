@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="502.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.BookBorrowController">
+   <children>
+      <Label layoutX="74.0" layoutY="105.0" prefHeight="49.0" prefWidth="458.0" text="Enter Your User Name">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUserName" layoutX="59.0" layoutY="208.0" prefHeight="57.0" prefWidth="370.0" />
+      <Button layoutX="193.0" layoutY="336.0" mnemonicParsing="false" onAction="#btnConfirmOnAction" prefHeight="49.0" prefWidth="110.0" text="Confirm" />
+   </children>
+</AnchorPane>
