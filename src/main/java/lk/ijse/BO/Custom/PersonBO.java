@@ -1,27 +1,20 @@
 package lk.ijse.BO.Custom;
 
 import lk.ijse.DAO.SuperDAO;
-import lk.ijse.Dto.AdminDTO;
+import lk.ijse.DTO.PersonDTO;
 import lk.ijse.Entity.Person;
 
-import java.util.List;
+import java.sql.SQLException;
 
 public interface PersonBO extends SuperDAO {
-    boolean savePerson(Person person);
+    boolean savePerson(Person person) throws SQLException;
 
-
+    boolean checkPassword(String username, String password);
 
     String generateClientId();
 
     Person searchPerson(String searchId);
 
-
-
-
-
-    boolean checkPassword(String username, String password);
-
     boolean changePassword(Person person);
-
-    List<AdminDTO> getAllAdmin();
+    PersonDTO getUserId(String username) throws SQLException;
 }

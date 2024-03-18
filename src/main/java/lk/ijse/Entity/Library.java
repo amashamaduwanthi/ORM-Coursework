@@ -1,15 +1,13 @@
 package lk.ijse.Entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import org.hibernate.annotations.GenericGenerator;
 
-@Entity(name = "branches")
+@Entity(name = "library")
 public class Library {
     @Id
-    @GeneratedValue(generator = "Branch-Id-Generator")
-    @GenericGenerator(name = "Branch-Id-Generator", strategy = "lk.ijse.util.BranchIdGenerator")
+//    @GeneratedValue(generator = "Branch-Id-Generator")
+//    @GenericGenerator(name = "Branch-Id-Generator", strategy = "lk.ijse.util.BranchIdGenerator")
     private String bId;
     private String address;
     private String bNumber;
@@ -69,7 +67,7 @@ public class Library {
 
     @Override
     public String toString() {
-        return "Library{" +
+        return "Branch{" +
                 "bId='" + bId + '\'' +
                 ", address='" + address + '\'' +
                 ", bNumber='" + bNumber + '\'' +
@@ -77,5 +75,4 @@ public class Library {
                 ", adminId='" + adminId + '\'' +
                 '}';
     }
-
 }

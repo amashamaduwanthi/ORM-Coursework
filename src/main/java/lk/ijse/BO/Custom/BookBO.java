@@ -1,8 +1,7 @@
 package lk.ijse.BO.Custom;
 
 import lk.ijse.DAO.SuperDAO;
-import lk.ijse.Dto.BookDTO;
-import lk.ijse.Entity.Book;
+import lk.ijse.DTO.BookDTO;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -21,4 +20,10 @@ public interface BookBO extends SuperDAO {
     String getBookCount() throws SQLException;
 
     BookDTO searchBook(String title);
+
+    BookDTO getBookId(String title);
+
+    boolean updateBookStatus(BookDTO dto) throws SQLException;
+
+    public BookDTO getBookWithBorrowedBooks(String bookId);
 }

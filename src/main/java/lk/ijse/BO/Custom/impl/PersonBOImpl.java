@@ -1,45 +1,54 @@
 package lk.ijse.BO.Custom.impl;
 
 import lk.ijse.BO.Custom.PersonBO;
-
+import lk.ijse.DAO.Custom.PersonDAO;
 import lk.ijse.DAO.DAOFactory.DAOFactory;
-import lk.ijse.DAO.DAOFactory.custom.PersonDAO;
-import lk.ijse.Dto.AdminDTO;
-import lk.ijse.Entity.Book;
+import lk.ijse.DTO.PersonDTO;
 import lk.ijse.Entity.Person;
 
-import java.util.List;
+import java.sql.SQLException;
 
 public class PersonBOImpl implements PersonBO {
-    PersonDAO personDAO = (PersonDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.PERSON);
-
+    PersonDAO personDAO= (PersonDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.PERSON);
     @Override
-    public boolean savePerson(Person person) {
-        return false;
-    }
-
-    @Override
-    public String generateClientId() {
-        return null;
-    }
-
-    @Override
-    public Person searchPerson(String searchId) {
-        return null;
+    public boolean savePerson(Person person) throws SQLException {
+        Person persons = new Person(person.getuId(),person.getUserName(),person.getPassword(),person.getConfirmPassword());
+        return personDAO.Save(persons);
     }
 
     @Override
     public boolean checkPassword(String username, String password) {
-        return false;
+        return personDAO.checkPassword(username, password);
+    }
+
+    @Override
+    public String generateClientId() {
+        return personDAO.generateUserID();
+    }
+
+    @Override
+    public Person searchPerson(String searchId) {
+        return personDAO.search(searchId);
     }
 
     @Override
     public boolean changePassword(Person person) {
-        return false;
+        Person person1 = new Person(person.getuId(),person.getUserName(),person.getPassword(),person.getConfirmPassword());
+        try {
+            return personDAO.update(person1);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
-    public List<AdminDTO> getAllAdmin() {
-        return null;
+    public PersonDTO getUserId(String username) throws SQLException {
+        String user = personDAO.get(username);
+        if(user != null){
+            PersonDTO userDto = new PersonDTO(user);
+            return userDto;
+        }else {
+            return null;
+        }
     }
 }

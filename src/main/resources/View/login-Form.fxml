@@ -15,28 +15,24 @@
             <Font name="System Bold" size="34.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUser" layoutX="569.0" layoutY="188.0" prefHeight="56.0" prefWidth="309.0" promptText="UserName">
+      <TextField fx:id="txtuserName" layoutX="569.0" layoutY="188.0" prefHeight="56.0" prefWidth="309.0" promptText="UserName">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtEmail" layoutX="569.0" layoutY="273.0" prefHeight="56.0" prefWidth="309.0" promptText="Email">
+      <TextField fx:id="txtPassword" layoutX="570.0" layoutY="284.0" prefHeight="56.0" prefWidth="309.0" promptText="Pssword">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtPassword" layoutX="570.0" layoutY="352.0" prefHeight="56.0" prefWidth="309.0" promptText="Pssword">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </TextField>
-      <Button layoutX="605.0" layoutY="458.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="41.0" prefWidth="94.0" text="Login" />
+      <Button layoutX="637.0" layoutY="414.0" mnemonicParsing="false" onAction="#btnLogInOnAction" prefHeight="41.0" prefWidth="94.0" style="-fx-background-color: #9195F6;" text="Login" />
       <Label layoutX="570.0" layoutY="529.0" prefHeight="16.0" prefWidth="152.0" text="Havent't an account    " textFill="#4c2da8" />
-      <Button layoutX="726.0" layoutY="525.0" mnemonicParsing="false" onAction="#btnSinInOnAction" text="signin" />
+      <Button layoutX="726.0" layoutY="525.0" mnemonicParsing="false" onAction="#btnSignInOnAction" text="signin" />
       <ImageView fitHeight="430.0" fitWidth="463.0" layoutX="37.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Assests/library-single-page.png" />
          </image>
       </ImageView>
+      <Button layoutX="693.0" layoutY="64.0" mnemonicParsing="false" onAction="#btnExitOnAction" prefHeight="32.0" prefWidth="94.0" style="-fx-background-color: white;" text="Exit" />
    </children>
 </AnchorPane>

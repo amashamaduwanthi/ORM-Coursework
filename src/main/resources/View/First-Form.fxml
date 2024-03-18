@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="firstPanel" prefHeight="740.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.FirstFormController">
+<AnchorPane fx:id="firstPanel" prefHeight="740.0" prefWidth="960.0" style="-fx-background-color: B784B7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.FirstFormController">
    <children>
-      <Button layoutX="581.0" layoutY="404.0" mnemonicParsing="false" onAction="#btnAdminOnAction" prefHeight="223.0" prefWidth="253.0" style="-fx-background-color: FC819E; -fx-background-radius: 20;" text="User">
+      <Button layoutX="581.0" layoutY="404.0" mnemonicParsing="false" onAction="#btnUserLogInOnAction" prefHeight="223.0" prefWidth="253.0" style="-fx-background-color: FC819E; -fx-background-radius: 20;" text="User">
          <font>
             <Font name="System Bold Italic" size="44.0" />
-         </font>
+         </font>1
       </Button>
-      <Button layoutX="581.0" layoutY="105.0" mnemonicParsing="false" onAction="#btnUserOnAction" prefHeight="223.0" prefWidth="253.0" style="-fx-background-color: FC819E; -fx-background-radius: 20;" text="Admin">
+      <Button layoutX="581.0" layoutY="105.0" mnemonicParsing="false" onAction="#btnAdminLogInOnAction" prefHeight="223.0" prefWidth="253.0" style="-fx-background-color: FC819E; -fx-background-radius: 20;" text="Admin">
          <font>
             <Font name="System Bold Italic" size="44.0" />
          </font>
